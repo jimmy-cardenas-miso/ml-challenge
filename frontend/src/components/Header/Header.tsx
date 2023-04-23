@@ -2,14 +2,14 @@ import { FC, FormEvent, useState } from 'react';
 
 import './header.sass';
 
-import logo from '../../assets/logo.png';
+import logoIcon from '../../assets/logo.png';
 import searchIcon from '../../assets/search.png';
 import { useNavigate } from 'react-router-dom';
 
 export const Header: FC = () => {
   const navigate = useNavigate();
   const [search, setSearch] = useState('');
-  const goToHome = () => {
+  const redirectHome = () => {
     navigate('/');
     setSearch('');
   };
@@ -22,8 +22,8 @@ export const Header: FC = () => {
   return (
     <header role="banner" className="header">
       <nav className="nav">
-        <a id="nav-brand" className="nav__brand" onClick={() => goToHome()}>
-          <img src={logo} alt="Logo" />
+        <a id="nav-brand" className="nav__brand" onClick={redirectHome}>
+          <img src={logoIcon} alt="Logo" />
         </a>
 
         <form

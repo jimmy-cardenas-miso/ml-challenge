@@ -1,0 +1,16 @@
+.breadcrumb
+  margin: 16px 0
+  li
+    color: var(--gray)
+    font-size: 14px
+    transition: .2s
+    display: inline
+
+    &:hover
+      color: var(--dark-gray)
+      cursor: pointer
+
+    & + li:before
+      padding: 8px
+      color: var(--gray)
+      content: "\003E"

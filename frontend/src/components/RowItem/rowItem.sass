@@ -1,0 +1,60 @@
+.row-item
+  padding: 16px
+  background: var(--white)
+  display: flex
+  position: relative
+
+  &__image
+    height: 180px
+    width: 180px
+    margin-right: 16px
+    border-radius: 4px
+    overflow: hidden
+
+  &__info
+    position: relative
+    width: 100%
+
+  &__panel
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    padding-right: 40px
+
+  &__head
+    display: flex
+    align-items: flex-start
+
+    img
+      object-fit: contain
+      width: 20px
+      margin-top: 8px
+
+  &__location
+    color: var(--gray)
+
+  &__price
+    margin: 0 16px 32px 0
+    font-size: 24px
+
+  &__title
+    font-size: 18px
+
+  &:after
+    content: ''
+    width: calc(100% - 40px)
+    height: 2px
+    background-color: var(--light-gray)
+    position: absolute
+    left: 20px
+    bottom: 0
+
+  &:last-child:after
+    display: none
+
+  &:hover
+    cursor: pointer
+    color: var(--blue)
+
+
+

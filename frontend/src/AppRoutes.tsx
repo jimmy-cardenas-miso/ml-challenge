@@ -10,19 +10,21 @@ export const AppRoutes = () => {
   return (
     <Router>
       <Header />
-      <Routes>
-        <Route path="/" Component={HomePage} />
-        <Route path="/items" Component={ItemListPage} />
-        <Route path="/items/1" Component={ItemDetailPage} />
-        <Route
-          path="*"
-          element={
-            <div>
-              <h2>404 Page not found</h2>
-            </div>
-          }
-        />
-      </Routes>
+      <div className="layout">
+        <Routes>
+          <Route path="/" Component={HomePage} />
+          <Route path="/items" Component={ItemListPage} />
+          <Route path="/items/1" Component={ItemDetailPage} />
+          <Route
+            path="*"
+            element={
+              <div>
+                <h2>404 Page not found</h2>
+              </div>
+            }
+          />
+        </Routes>
+      </div>
     </Router>
   );
 };

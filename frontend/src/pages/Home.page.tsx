@@ -1,8 +1,7 @@
-type Props = {};
-export const HomePage = (props: Props) => {
-    return (
-        <div>
-            <h1>Home</h1>
-        </div>
-    );
+export const HomePage = () => {
+  return (
+    <div>
+      <h1>Home</h1>
+    </div>
+  );
 };

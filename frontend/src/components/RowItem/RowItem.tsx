@@ -1,7 +1,7 @@
 import { FC } from 'react';
 
 import './rowItem.sass';
-import { currencyFormat } from '../../utils/currencyFormatter';
+import { currencyFormat } from '../../utilities/currencyFormatter';
 import deliveryIcon from '../../assets/delivery.png';
 import { Item } from '../../models/item.model';
 

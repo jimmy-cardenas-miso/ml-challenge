@@ -5,6 +5,7 @@ export async function getItems(query: string): Promise<QueryResponse> {
     const respond = await fetch(`http://localhost:8080/api/items?q=${query}`);
     return await respond.json();
   } catch (error) {
+    // @ts-ignore
     throw new Error(error.statusText);
   }
 }
@@ -14,6 +15,7 @@ export async function getItemDetail(id: string): Promise<ItemResponse> {
     const respond = await fetch(`http://localhost:8080/api/items/${id}`);
     return await respond.json();
   } catch (error) {
+    // @ts-ignore
     throw new Error(error.statusText);
   }
 }

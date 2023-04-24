@@ -3,28 +3,31 @@ import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 import { HomePage } from './pages/Home.page';
 import { ItemDetailPage } from './pages/ItemDetail/ItemDetail.page';
-import { ItemListPage } from './pages/ItemList.page';
+import { ItemListPage } from './pages/ItemList/ItemList.page';
 import { Header } from './components/Header';
+import { ItemProvider } from './contexts/Item.Provider';
 
 export const AppRoutes = () => {
   return (
-    <Router>
-      <Header />
-      <div className="layout">
-        <Routes>
-          <Route path="/" Component={HomePage} />
-          <Route path="/items" Component={ItemListPage} />
-          <Route path="/items/:id" Component={ItemDetailPage} />
-          <Route
-            path="*"
-            element={
-              <div>
-                <h2>404 Page not found</h2>
-              </div>
-            }
-          />
-        </Routes>
-      </div>
-    </Router>
+    <ItemProvider>
+      <Router>
+        <Header />
+        <div className="layout">
+          <Routes>
+            <Route path="/" Component={HomePage} />
+            <Route path="/items" Component={ItemListPage} />
+            <Route path="/items/:id" Component={ItemDetailPage} />
+            <Route
+              path="*"
+              element={
+                <div>
+                  <h2>404 Page not found</h2>
+                </div>
+              }
+            />
+          </Routes>
+        </div>
+      </Router>
+    </ItemProvider>
   );
 };

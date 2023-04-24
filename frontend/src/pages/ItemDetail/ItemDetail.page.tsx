@@ -1,33 +1,18 @@
 import './itemDetail.sass';
 
-import React, { useContext, useEffect, useState } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import { Breadcrumb } from '../../components/Breadcrumb';
-import { ItemContext } from '../../contexts/Item.Context';
-import { Item } from '../../models/item.model';
-import { ItemResponse } from '../../models/item-response.model';
-import { getItemDetail } from '../../services/items.service';
+import { useGetDetail } from '../../hooks/useGetDetail';
 import { currencyFormat } from '../../utilities/currencyFormatter';
 
 export const ItemDetailPage = () => {
-  const { id } = useParams();
   const navigate = useNavigate();
-  const { categories } = useContext(ItemContext);
-  const [detail, setDetail] = useState({} as Item);
+  const { loading, detail, categories } = useGetDetail();
 
-  useEffect(() => {
-    const executeQuery = async (id: string) => {
-      const { item }: ItemResponse = await getItemDetail(id);
-      setDetail(item);
-    };
-
-    executeQuery(id ?? '');
-  }, []);
-
-  if (!detail.title) {
-    return <></>;
-  }
+  if (loading) return <p className="loader"></p>;
+  if (!detail?.title) return <p className="not-found">Item no encontrado</p>;
 
   return (
     <article className="detail">

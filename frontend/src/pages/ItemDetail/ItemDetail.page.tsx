@@ -1,13 +1,14 @@
+import './itemDetail.sass';
+
 import React, { useContext, useEffect, useState } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+
+import { Breadcrumb } from '../../components/Breadcrumb';
+import { ItemContext } from '../../contexts/Item.Context';
+import { Item } from '../../models/item.model';
 import { ItemResponse } from '../../models/item-response.model';
 import { getItemDetail } from '../../services/items.service';
-import { useNavigate, useParams } from 'react-router-dom';
-import { Item } from '../../models/item.model';
 import { currencyFormat } from '../../utilities/currencyFormatter';
-
-import './itemDetail.sass';
-import { ItemContext } from '../../contexts/Item.Context';
-import { Breadcrumb } from '../../components/Breadcrumb';
 
 export const ItemDetailPage = () => {
   const { id } = useParams();
@@ -29,41 +30,43 @@ export const ItemDetailPage = () => {
   }
 
   return (
-    <div className="detail">
+    <article className="detail">
       <div className="detail__nav">
-        <p onClick={() => navigate(-1)}>Volver al listado</p>
+        <button onClick={() => navigate(-1)}>
+          <p>Volver al listado</p>
+        </button>
         <Breadcrumb list={categories}></Breadcrumb>
       </div>
 
       <div className="detail__container">
         <div>
-          <figure className="detail__image-container">
+          <div className="detail__image-container">
             <img
               className="detail__image"
               src={detail.picture}
               alt={detail.title}
             />
-          </figure>
-          <div className="detail__specs">
-            <h3 className="detail__specs-title">Descripción del producto</h3>
-            <p className="detail__specs-description">{detail.title}</p>
           </div>
+          <figcaption className="detail__specs">
+            <p className="detail__specs-title">Descripción del producto</p>
+            <h1 className="detail__specs-description">{detail.title}</h1>
+          </figcaption>
         </div>
 
         <div className="detail__info">
-          <div className="detail__condition">
+          <h3 className="detail__condition">
             {detail.condition} - {detail.sold_quantity} vendidos
-          </div>
+          </h3>
           <p className="detail__title">{detail.title}</p>
-          <h1 className="detail__price">
+          <h2 className="detail__price">
             {currencyFormat(detail.price.amount)}
-          </h1>
+          </h2>
 
           <div className="detail__button">
             <button className="btn-primary">Comprar</button>
           </div>
         </div>
       </div>
-    </div>
+    </article>
   );
 };

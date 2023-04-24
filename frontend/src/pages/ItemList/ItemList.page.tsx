@@ -1,12 +1,14 @@
-import { useNavigate, useSearchParams } from 'react-router-dom';
+import './itemList.sass';
+
 import React, { useContext, useEffect, useState } from 'react';
-import { getItems } from '../../services/items.service';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+
 import { Breadcrumb } from '../../components/Breadcrumb';
-import { QueryResponse } from '../../models/item-response.model';
-import { Item } from '../../models/item.model';
 import { RowItem } from '../../components/RowItem';
 import { ItemContext } from '../../contexts/Item.Context';
-import './itemList.sass';
+import { Item } from '../../models/item.model';
+import { QueryResponse } from '../../models/item-response.model';
+import { getItems } from '../../services/items.service';
 
 export const ItemListPage = () => {
   const navigate = useNavigate();
@@ -29,9 +31,9 @@ export const ItemListPage = () => {
   }, [searchParams]);
 
   return (
-    <div className="item-list">
+    <section className="item-list">
       <Breadcrumb list={categories}></Breadcrumb>
-      <ul className="item-list__content">
+      <div className="item-list__content">
         {items?.length > 0 &&
           items.map((item) => (
             <RowItem
@@ -40,7 +42,7 @@ export const ItemListPage = () => {
               handle={redirectDetail}
             />
           ))}
-      </ul>
-    </div>
+      </div>
+    </section>
   );
 };

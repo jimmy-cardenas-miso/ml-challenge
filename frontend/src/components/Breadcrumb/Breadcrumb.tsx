@@ -1,6 +1,6 @@
-import { FC } from 'react';
-
 import './breadcrumb.sass';
+
+import { FC } from 'react';
 
 type Props = {
   list: string[];
@@ -13,7 +13,9 @@ export const Breadcrumb: FC<Props> = ({ list }) => {
     <ul className="breadcrumb">
       {list.map((item: string) => (
         <li key={item}>
-          <span>{item}</span>
+          <button>
+            <span>{item}</span>
+          </button>
         </li>
       ))}
     </ul>

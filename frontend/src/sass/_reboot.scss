@@ -329,6 +329,9 @@ Details at https://github.com/twbs/bootstrap/issues/24093
 */
 button {
   border-radius: 0;
+  background: transparent;
+  border: none;
+  padding: 0
 }
 
 /*

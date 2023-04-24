@@ -1,10 +1,10 @@
-import { FC, FormEvent, useState } from 'react';
-
 import './header.sass';
+
+import { FC, FormEvent, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 import logoIcon from '../../assets/logo.png';
 import searchIcon from '../../assets/search.png';
-import { useNavigate } from 'react-router-dom';
 
 export const Header: FC = () => {
   const navigate = useNavigate();
@@ -14,7 +14,7 @@ export const Header: FC = () => {
     setSearch('');
   };
   const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    let queryString = 'search=' + search;
+    const queryString = 'search=' + search;
     navigate(`/items?${queryString}`);
     e.preventDefault();
   };
@@ -22,9 +22,9 @@ export const Header: FC = () => {
   return (
     <header role="banner" className="header">
       <nav className="nav">
-        <a id="nav-brand" className="nav__brand" onClick={redirectHome}>
+        <button id="nav-brand" className="nav__brand" onClick={redirectHome}>
           <img src={logoIcon} alt="Logo" />
-        </a>
+        </button>
 
         <form
           id="nav-search"

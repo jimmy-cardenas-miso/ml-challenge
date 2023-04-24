@@ -15,7 +15,7 @@ describe('getItems', () => {
     const result = await getItems(query);
 
     expect(fetch).toHaveBeenCalledWith(
-      `http://localhost:8080/api/items?q=${query}`,
+      `${process.env.VITA_BASE_URL}/api/items?q=${query}`,
     );
     expect(mockResponse.json).toHaveBeenCalled();
     expect(result).toEqual(mockData);
@@ -40,7 +40,9 @@ describe('getItemDetail', () => {
 
     const result = await getItemDetail(id);
 
-    expect(fetch).toHaveBeenCalledWith(`http://localhost:8080/api/items/${id}`);
+    expect(fetch).toHaveBeenCalledWith(
+      `${process.env.VITA_BASE_URL}/api/items/${id}`,
+    );
     expect(mockResponse.json).toHaveBeenCalled();
     expect(result).toEqual(mockData);
   });

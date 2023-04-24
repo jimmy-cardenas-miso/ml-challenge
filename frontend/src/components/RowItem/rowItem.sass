@@ -1,5 +1,7 @@
+@import '../../sass/base-styles'
+
 .row-item
-  padding: 16px
+  @extend .p-3
   background: var(--white)
   display: flex
   position: relative
@@ -7,11 +9,10 @@
   align-items: center
 
   &__image
+    @extend .mr-3
+    @extend .border
     height: 180px
     width: 180px
-    margin-right: 16px
-    border-radius: 4px
-    overflow: hidden
     object-fit: contain
 
   &__info
@@ -32,17 +33,17 @@
     img
       object-fit: contain
       width: 20px
-      margin-top: 8px
+      @extend .mt-1
 
   &__location
     color: var(--gray)
 
   &__price
     margin: 0
-    font-size: 24px
+    font-size: 1.5rem
 
   &__title
-    font-size: 18px
+    font-size: 1.125rem
     text-align: left
 
   &:after
@@ -61,7 +62,7 @@
     cursor: pointer
     color: var(--blue)
 
-  @media screen and (min-width: 720px)
+  @include media-width-min(md)
     flex-direction: row
 
     &__panel

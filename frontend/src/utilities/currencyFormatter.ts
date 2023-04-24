@@ -1,2 +1,17 @@
-export const currencyFormat = (number: number) =>
-  '$' + number.toFixed(2).replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
+const formatting_options = {
+  style: 'currency',
+  currency: 'USD',
+  minimumFractionDigits: 2,
+};
+export const currencyFormat = (
+  number: number,
+  currency: string = formatting_options.currency,
+  minimumFractionDigits: number = formatting_options.minimumFractionDigits,
+) => {
+  const currencyString = new Intl.NumberFormat('en-US', {
+    ...formatting_options,
+    currency,
+    minimumFractionDigits,
+  });
+  return currencyString.format(number);
+};

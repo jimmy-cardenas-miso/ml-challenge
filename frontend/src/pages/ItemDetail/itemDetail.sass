@@ -1,5 +1,8 @@
+@import '../../sass/base-styles'
+
 .detail
-  padding: 16px 0
+  @extend .py-3
+  @extend .pl-0
 
   &__container
     display: flex
@@ -8,7 +11,7 @@
     align-items: flex-start
     background-color: var(--white)
     border-radius: 4px
-    margin-top: 16px
+    @extend .mt-3
     padding: 16px
 
   &__nav
@@ -23,10 +26,10 @@
         content: "|"
 
       p
-        margin: 0
-        padding: 0
+        @extend .m-0
+        @extend .p-0
         color: var(--gray)
-        font-size: 14px
+        font-size: 0.875rem
 
         &:hover
           cursor: pointer
@@ -42,35 +45,36 @@
     height: 100%
 
   &__specs-title
-    margin-bottom: 32px
-    font-size: 28px
+    @extend .mb-5
+    font-size: 1.75rem
     color: var(--dark)
 
   &__specs-description
-    font-size: 16px
+    font-size: 1rem
     color: var(--gray)
 
   &__info
+    @extend .ml-0
     flex: 1
     max-width: 340px
-    margin-left: 0
 
   &__title
-    font-size: 24px
-    margin-bottom: 32px
+    @extend .mb-5
+    font-size: 1.5rem
 
   &__condition
-    font-size: 14px
-    margin-bottom: 16px
+    @extend .mb-5
+    font-size: 0.875rem
 
   &__price
-    font-size: 34px
-    margin-bottom: 32px
+    font-size: 2.125rem
+    @extend .mb-5
 
   &__button
-    margin-right: 0
+    @extend .mr-0
 
-  @media screen and (min-width: 720px)
+
+  @include media-width-min(md)
     &__container
       padding: 32px
       flex-direction: row
@@ -82,7 +86,7 @@
       margin-left: 32px
 
     &__price
-      font-size: 46px
+      font-size: 2.875rem
 
     &__button
       margin-right: 32px

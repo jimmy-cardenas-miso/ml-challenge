@@ -23,7 +23,11 @@ export const RowItem: FC<Props> = ({ item, handle }) => {
         <div className="row-item__panel">
           <div className="row-item__head">
             <p className="row-item__price">
-              {currencyFormat(item.price.amount)}
+              {currencyFormat(
+                item.price.amount,
+                item.price.currency,
+                item.price.decimals,
+              )}
             </p>
             {item.free_shipping && <img src={deliveryIcon} alt="Envio" />}
           </div>

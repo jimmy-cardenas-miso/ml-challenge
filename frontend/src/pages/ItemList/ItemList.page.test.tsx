@@ -18,7 +18,7 @@ const mockItems = [
     title: 'Test Item',
     picture: 'test.jpg',
     price: {
-      currency: '',
+      currency: 'ARS',
       amount: 1000,
       decimals: 2,
     },

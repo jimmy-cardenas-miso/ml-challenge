@@ -25,8 +25,15 @@ describe('RowItem', () => {
     const titleElement = screen.getByText(item.title);
     expect(titleElement).toBeDefined();
 
-    const priceElement = screen.getByText(currencyFormat(item.price.amount));
+    const priceElement = document.querySelector('.row-item__price');
     expect(priceElement).toBeDefined();
+    expect(priceElement?.textContent).toEqual(
+      currencyFormat(
+        item.price.amount,
+        item.price.currency,
+        item.price.decimals,
+      ),
+    );
 
     const locationElement = screen.getByText(item.city_name);
     expect(locationElement).toBeDefined();

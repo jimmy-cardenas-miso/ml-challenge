@@ -44,7 +44,11 @@ export const ItemDetailPage = () => {
           </h3>
           <p className="detail__title">{detail.title}</p>
           <h2 className="detail__price">
-            {currencyFormat(detail.price.amount)}
+            {currencyFormat(
+              detail.price.amount,
+              detail.price.currency,
+              detail.price.decimals,
+            )}
           </h2>
 
           <div className="detail__button">

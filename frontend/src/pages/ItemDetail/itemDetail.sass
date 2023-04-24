@@ -9,7 +9,7 @@
     background-color: var(--white)
     border-radius: 4px
     margin-top: 16px
-    padding: 32px
+    padding: 16px
 
   &__nav
     display: flex
@@ -33,7 +33,7 @@
           color: var(--blue)
 
   &__image-container
-    height: 680px
+    height: 100%
 
   &__image
     object-fit: contain
@@ -53,7 +53,7 @@
   &__info
     flex: 1
     max-width: 340px
-    margin-left: 32px
+    margin-left: 0
 
   &__title
     font-size: 24px
@@ -64,12 +64,25 @@
     margin-bottom: 16px
 
   &__price
-    font-size: 46px
+    font-size: 34px
     margin-bottom: 32px
 
   &__button
-    margin-right: 32px
+    margin-right: 0
 
-  @media screen and (min-width: 1280px)
+  @media screen and (min-width: 720px)
     &__container
+      padding: 32px
       flex-direction: row
+
+    &__image-container
+      height: 680px
+
+    &__info
+      margin-left: 32px
+
+    &__price
+      font-size: 46px
+
+    &__button
+      margin-right: 32px

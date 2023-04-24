@@ -10,4 +10,5 @@ export interface Item {
   condition: string;
   free_shipping: boolean;
   city_name: string;
+  sold_quantity?: string;
 }

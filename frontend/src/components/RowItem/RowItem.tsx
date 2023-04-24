@@ -13,7 +13,6 @@ export const RowItem: FC<Props> = ({ item, handle }) => {
   return (
     <div
       id={item.id.toString()}
-      key={item.id.toString()}
       className="row-item"
       onClick={() => handle(item)}
     >

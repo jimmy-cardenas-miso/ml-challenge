@@ -2,7 +2,7 @@ import { useNavigate, useSearchParams } from 'react-router-dom';
 import React, { useEffect, useState } from 'react';
 import { getItems } from '../services/items.service';
 import { Breadcrumb } from '../components/Breadcrumb';
-import { QueryResponse } from '../models/query.model';
+import { QueryResponse } from '../models/item-response.model';
 import { Item } from '../models/item.model';
 import { RowItem } from '../components/RowItem';
 
@@ -24,14 +24,20 @@ export const ItemListPage = () => {
     };
 
     executeQuery(searchParams.get('search') ?? '');
-  }, []);
+  }, [searchParams]);
 
   return (
     <>
       <Breadcrumb list={categories}></Breadcrumb>
       <ul className="border">
         {items?.length > 0 &&
-          items.map((item) => <RowItem item={item} handle={redirectDetail} />)}
+          items.map((item) => (
+            <RowItem
+              key={item.id.toString()}
+              item={item}
+              handle={redirectDetail}
+            />
+          ))}
       </ul>
     </>
   );

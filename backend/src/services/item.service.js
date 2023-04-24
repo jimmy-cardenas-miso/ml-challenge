@@ -13,10 +13,16 @@ const ItemService = {
     getById(req, res) {
         const {id} = req.params;
         const url = `https://api.mercadolibre.com/items/${id}`;
-        axios.get(url)
-            .then(response => res.status(200).send(response.data))
-            .catch(error => res.status(500).send(error));
-    }
+        const urlDescription = `${url}/description`;
+
+        axios.all([
+            axios.get(url),
+            axios.get(urlDescription)
+        ])
+            .then(axios.spread(({data}, {data: {plain_text}}) =>
+                res.status(200).send(adapter.mapDetail(data, plain_text))))
+            .catch(error => res.status(500).send(adapter.mapError(error)));
+    },
 };
 
 module.exports = ItemService;

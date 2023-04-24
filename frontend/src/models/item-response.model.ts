@@ -8,3 +8,11 @@ export interface QueryResponse {
   categories: string[];
   items: Item[];
 }
+
+export interface ItemResponse {
+  author: {
+    name: string;
+    lastname: string;
+  };
+  item: Item;
+}

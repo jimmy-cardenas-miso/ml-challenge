@@ -28,7 +28,7 @@ function mapResults(data) {
             lastname: 'Cardenas'
         },
         categories:
-            (filters.length > 0)
+            (filters?.length > 0)
                 ? filters.find((cat) => cat.id === 'category')
                     .values
                     .reduce(
@@ -42,4 +42,23 @@ function mapResults(data) {
     };
 }
 
-module.exports = { mapResults }
+function mapDetail(data, description) {
+    return {
+        author: {
+            name: "Jimmy",
+            lastname: "Cardenas"
+        },
+        item: {
+            ...mapItemList(data),
+            sold_quantity: data.sold_quantity,
+            description
+        }
+    }
+}
+
+function mapError(error) {
+    return error.isAxiosError ? error.toJSON().message : 'Error unknown';
+}
+
+module.exports = {mapResults, mapDetail, mapError}
+

@@ -19,7 +19,7 @@ const item: Item = {
 };
 
 describe('RowItem', () => {
-  it('should render item information correctly', () => {
+  it('should render detail information correctly', () => {
     render(<RowItem item={item} handle={() => {}} />);
 
     const titleElement = screen.getByText(item.title);

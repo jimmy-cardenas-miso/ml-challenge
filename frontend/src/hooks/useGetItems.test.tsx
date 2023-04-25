@@ -1,15 +1,9 @@
-import { renderHook, waitFor } from '@testing-library/react';
-import { useContext } from 'react';
+import { renderHook } from '@testing-library/react';
 import { useSearchParams } from 'react-router-dom';
 
-import { Item } from '../models/item.model';
-import { getItems } from '../services/items.service';
+import { useAppDispatch, useAppSelector } from '../store/hooks';
+import { searchItems } from '../store/slices/search';
 import { useGetItems } from './useGetItems';
-
-jest.mock('react', () => ({
-  ...jest.requireActual('react'),
-  useContext: jest.fn(),
-}));
 
 jest.mock('react-router-dom', () => ({
   useSearchParams: jest
@@ -17,101 +11,45 @@ jest.mock('react-router-dom', () => ({
     .mockReturnValue([new URLSearchParams({ search: 'ASD' })]),
 }));
 
-jest.mock('../contexts/Item.Context', () => ({
-  ItemContext: { categories: ['Category 1', 'Category 2'] },
+jest.mock('../store/hooks', () => ({
+  useAppDispatch: jest.fn(),
+  useAppSelector: jest.fn(),
 }));
 
-jest.mock('../services/items.service', () => ({
-  getItems: jest.fn(),
+jest.mock('../store/slices/search', () => ({
+  searchItems: jest.fn(),
+  selectSearch: jest.fn(),
 }));
 
 describe('useGetItems', () => {
-  const mockItemId = 'mockItemId';
-  const mockItem: Item = {
-    id: mockItemId,
-    title: 'Mock Item',
-    price: {
-      currency: 'ARS',
-      amount: 100,
-      decimals: 0,
-    },
-    picture: 'https://mock-picture.com',
-    condition: 'new',
-    free_shipping: true,
-    sold_quantity: '0',
-    city_name: 'Bogota',
-  };
-  const itemsMock = [mockItem, mockItem];
-  const categoriesMock = ['Category 1', 'Category 2'];
-
-  const mockSearchParams = [new URLSearchParams({ search: 'ASD' })];
-  const mockContext = { categories: ['Category 1', 'Category 2'] };
+  const searchQuery = 'search query';
+  const mockSearchParams = [new URLSearchParams({ search: searchQuery })];
 
   beforeEach(() => {
-    jest.clearAllMocks();
     (useSearchParams as jest.Mock).mockReturnValue(mockSearchParams);
-    (useContext as jest.Mock).mockReturnValue(mockContext);
+    (useAppDispatch as jest.Mock).mockReturnValue(jest.fn());
+    (useAppSelector as jest.Mock).mockReturnValue({
+      loading: false,
+      items: [{ id: 1, name: 'item 1' }],
+      categories: ['category 1', 'category 2'],
+    });
   });
 
   afterEach(() => {
     jest.clearAllMocks();
   });
 
-  it('should return an empty array of items and categories when searchParams is empty', async () => {
-    (getItems as jest.Mock).mockResolvedValue({
-      items: [],
-      categories: [],
-    });
+  it('should call searchItems with correct query', () => {
+    renderHook(() => useGetItems());
 
+    expect(searchItems).toHaveBeenCalledWith(searchQuery);
+  });
+
+  it('should return correct loading, items, and categories', () => {
     const { result } = renderHook(() => useGetItems());
 
     expect(result.current.loading).toBe(false);
-    expect(result.current.items).toEqual([]);
-    expect(result.current.categories).toEqual(categoriesMock);
-
-    await waitFor(() => {
-      expect(getItems).toHaveBeenCalledTimes(0);
-
-      expect(result.current.loading).toBe(false);
-      expect(result.current.items).toEqual([]);
-      expect(result.current.categories).toEqual(categoriesMock);
-    });
-  });
-
-  it('should return items and categories when searchParams is not empty', async () => {
-    (getItems as jest.Mock).mockResolvedValue({
-      items: itemsMock,
-      categories: categoriesMock,
-    });
-
-    const { result } = renderHook(() => useGetItems());
-
-    await waitFor(() => {
-      expect(getItems).toHaveBeenCalledTimes(0);
-
-      expect(result.current.loading).toBe(false);
-      expect(result.current.items).toEqual([]);
-      expect(result.current.categories).toEqual(categoriesMock);
-    });
-  });
-
-  it('should return empty array of items and categories when an error occurs', async () => {
-    (getItems as jest.MockedFunction<typeof getItems>).mockRejectedValueOnce(
-      'error',
-    );
-
-    const { result } = renderHook(() => useGetItems());
-
-    expect(result.current.loading).toBe(false);
-    expect(result.current.items).toEqual([]);
-    expect(result.current.categories).toEqual(categoriesMock);
-
-    await waitFor(() => {
-      expect(getItems).toHaveBeenCalledTimes(0);
-
-      expect(result.current.loading).toBe(false);
-      expect(result.current.items).toEqual([]);
-      expect(result.current.categories).toEqual(categoriesMock);
-    });
+    expect(result.current.items).toEqual([{ id: 1, name: 'item 1' }]);
+    expect(result.current.categories).toEqual(['category 1', 'category 2']);
   });
 });

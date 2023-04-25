@@ -14,6 +14,7 @@ export default {
     'jestGlobalMocks.ts',
     '.module.ts',
     '<rootDir>/src/app/main.ts',
+    '<rootDir>/src/store',
     'index.ts',
   ],
 };

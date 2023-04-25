@@ -1,21 +1,10 @@
 import { ItemResponse, QueryResponse } from '../models/item-response.model';
+import { axiosApi } from '../utilities/axiosApi';
 
-export async function getItems(query: string): Promise<QueryResponse> {
-  try {
-    const respond = await fetch(
-      `${process.env.VITE_BASE_URL}/api/items?q=${query}`,
-    );
-    return await respond.json();
-  } catch ({ statusText }) {
-    throw new Error(statusText as string);
-  }
+export function getItems(query: string): Promise<QueryResponse> {
+  return axiosApi.get(`?q=${query}`).then(({ data }) => data);
 }
 
 export async function getItemDetail(id: string): Promise<ItemResponse> {
-  try {
-    const respond = await fetch(`${process.env.VITE_BASE_URL}/api/items/${id}`);
-    return await respond.json();
-  } catch ({ statusText }) {
-    throw new Error(statusText as string);
-  }
+  return axiosApi.get(id).then(({ data }) => data);
 }

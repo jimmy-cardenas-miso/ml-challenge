@@ -1,58 +1,55 @@
-import { getItemDetail, getItems } from './items.service';
+import { QueryResponse } from '../models/item-response.model';
+import { axiosApi } from '../utilities/axiosApi';
+import { getItems } from './items.service';
+
+jest.mock('../utilities/axiosApi', () => ({
+  axiosApi: {
+    create: jest.fn(),
+    get: jest.fn(),
+  },
+}));
 
 describe('getItems', () => {
-  it('should fetch and return items', async () => {
-    const query = 'test';
-    const mockData = {
-      results: [
-        { id: '1', name: 'Item 1' },
-        { id: '2', name: 'Item 2' },
-      ],
-    };
-    const mockResponse = { json: jest.fn().mockResolvedValue(mockData) };
-    global.fetch = jest.fn().mockResolvedValue(mockResponse);
+  const query = 'search query';
+  const responseData: QueryResponse = {
+    author: {
+      name: 'Jimmy',
+      lastname: 'Cardenas',
+    },
+    items: [
+      {
+        id: '123',
+        title: 'Test Item',
+        picture: 'test.jpg',
+        price: {
+          currency: 'ARS',
+          amount: 1000,
+          decimals: 2,
+        },
+        condition: 'new',
+        sold_quantity: '10',
+        free_shipping: true,
+        city_name: 'Bogota',
+      },
+    ],
+    categories: ['category 1', 'category 2'],
+  };
 
-    const result = await getItems(query);
-
-    expect(fetch).toHaveBeenCalledWith(
-      `${process.env.VITA_BASE_URL}/api/items?q=${query}`,
+  beforeEach(() => {
+    (axiosApi.get as jest.Mock).mockResolvedValueOnce(
+      Promise.resolve({ data: responseData }),
     );
-    expect(mockResponse.json).toHaveBeenCalled();
-    expect(result).toEqual(mockData);
   });
 
-  it('should throw an error if the fetch fails', async () => {
-    const query = 'test';
-    const mockError = new Error('Not found');
-    const mockResponse = { statusText: 'Not found' };
-    global.fetch = jest.fn().mockRejectedValue(mockResponse);
+  it('should call axiosApi.get with correct query', async () => {
+    await getItems(query);
 
-    await expect(getItems(query)).rejects.toThrow(mockError);
-  });
-});
-
-describe('getItemDetail', () => {
-  it('should fetch and return item detail', async () => {
-    const id = '1';
-    const mockData = { id: '1', name: 'Item 1' };
-    const mockResponse = { json: jest.fn().mockResolvedValue(mockData) };
-    global.fetch = jest.fn().mockResolvedValue(mockResponse);
-
-    const result = await getItemDetail(id);
-
-    expect(fetch).toHaveBeenCalledWith(
-      `${process.env.VITA_BASE_URL}/api/items/${id}`,
-    );
-    expect(mockResponse.json).toHaveBeenCalled();
-    expect(result).toEqual(mockData);
+    expect(axiosApi.get).toHaveBeenCalledWith(`?q=${query}`);
   });
 
-  it('should throw an error if the fetch fails', async () => {
-    const id = '1';
-    const mockError = new Error('Not found');
-    const mockResponse = { statusText: 'Not found' };
-    global.fetch = jest.fn().mockRejectedValue(mockResponse);
+  it('should return correct response data', async () => {
+    const result: QueryResponse = await getItems(query);
 
-    await expect(getItemDetail(id)).rejects.toThrow(mockError);
+    expect(result).toEqual(responseData);
   });
 });

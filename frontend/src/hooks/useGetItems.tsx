@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useSearchParams } from 'react-router-dom';
+
 import { Item } from '../models/item.model';
 import { useAppDispatch, useAppSelector } from '../store/hooks';
 import { searchItems, selectSearch } from '../store/slices/search';

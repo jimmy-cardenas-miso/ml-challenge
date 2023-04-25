@@ -10,11 +10,13 @@ Link of <a href="https://ml-challenge-c9f9c.firebaseapp.com/" target="_blank"><b
 - 🔥 Item List
 - 🔥 Item Detail
 
-## Tools
+## Specs
 
 - 📡 Vite
 - 📡 Firebase
 - 📡 Express
+- 📡 Redux
+- 📡 Lazy loading
 
 ## 🚀 Getting Started
 

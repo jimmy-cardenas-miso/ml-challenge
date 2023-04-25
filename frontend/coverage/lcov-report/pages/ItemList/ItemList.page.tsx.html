@@ -3,15 +3,15 @@
 <html lang="en">
 
 <head>
-    <title>Code coverage report for hooks/useGetDetail.tsx</title>
+    <title>Code coverage report for pages/ItemList/ItemList.page.tsx</title>
     <meta charset="utf-8" />
-    <link rel="stylesheet" href="../prettify.css" />
-    <link rel="stylesheet" href="../base.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="../favicon.png" />
+    <link rel="stylesheet" href="../../prettify.css" />
+    <link rel="stylesheet" href="../../base.css" />
+    <link rel="shortcut icon" type="image/x-icon" href="../../favicon.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style type='text/css'>
         .coverage-summary .sorter {
-            background-image: url(../sort-arrow-sprite.png);
+            background-image: url(../../sort-arrow-sprite.png);
         }
     </style>
 </head>
@@ -19,20 +19,20 @@
 <body>
 <div class='wrapper'>
     <div class='pad1'>
-        <h1><a href="../index.html">All files</a> / <a href="index.html">hooks</a> useGetDetail.tsx</h1>
+        <h1><a href="../../index.html">All files</a> / <a href="index.html">pages/ItemList</a> ItemList.page.tsx</h1>
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>21/21</span>
+                <span class='fraction'>17/17</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">100% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>1/2</span>
+                <span class='fraction'>4/4</span>
             </div>
         
             
@@ -46,7 +46,7 @@
             <div class='fl pad1y space-right2'>
                 <span class="strong">100% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>20/20</span>
+                <span class='fraction'>15/15</span>
             </div>
         
             
@@ -101,81 +101,81 @@
 <a name='L36'></a><a href='#L36'>36</a>
 <a name='L37'></a><a href='#L37'>37</a>
 <a name='L38'></a><a href='#L38'>38</a>
-<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-yes">2x</span>
+<a name='L39'></a><a href='#L39'>39</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">2x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">9x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { useContext, useEffect, useState } from 'react';
-import { useParams } from 'react-router-dom';
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import './itemList.sass';
 &nbsp;
-import { ItemContext } from '../contexts/Item.Context';
-import { Item } from '../models/item.model';
-import { ItemResponse } from '../models/item-response.model';
-import { getItemDetail } from '../services/items.service';
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
 &nbsp;
-export const useGetDetail = (): {
-  loading: boolean;
-  detail: Item;
-  categories: string[];
-} =&gt; {
-  const { id } = useParams();
-  const { categories } = useContext(ItemContext);
-  const [detail, setDetail] = useState({} as Item);
-  const [loading, setLoading] = useState(false);
+import { Breadcrumb } from '../../components/Breadcrumb';
+import { RowItem } from '../../components/RowItem';
+import { useGetItems } from '../../hooks/useGetItems';
+import { Item } from '../../models/item.model';
 &nbsp;
-  useEffect(() =&gt; {
-    const executeQuery = async (id: string) =&gt; {
-      try {
-        setLoading(true);
-        setDetail({} as Item);
+export const ItemListPage = () =&gt; {
+  const navigate = useNavigate();
+  const { loading, items, categories } = useGetItems();
 &nbsp;
-        const { item }: ItemResponse = await getItemDetail(id);
+  const redirectDetail = (item: Item) =&gt; {
+    navigate(`/items/${item.id}`);
+  };
 &nbsp;
-        setLoading(false);
-        setDetail(item);
-      } catch (e) {
-        setLoading(false);
-      }
-    };
+  if (loading) return &lt;p className="loader"&gt;&lt;/p&gt;;
+  if (!(items?.length &gt; 0))
+    return &lt;p className="not-found"&gt;No results found&lt;/p&gt;;
 &nbsp;
-    executeQuery(id ?? <span class="branch-1 cbranch-no" title="branch not covered" >'')</span>;
-  }, []);
-&nbsp;
-  return { loading, detail, categories };
+  return (
+    &lt;section className="item-list"&gt;
+      &lt;Breadcrumb list={categories}&gt;&lt;/Breadcrumb&gt;
+      &lt;div className="item-list__content"&gt;
+        {items?.length &gt; 0 &amp;&amp;
+          items.map((item) =&gt; (
+            &lt;RowItem
+              key={item.id.toString()}
+              item={item}
+              handle={redirectDetail}
+            /&gt;
+          ))}
+      &lt;/div&gt;
+    &lt;/section&gt;
+  );
 };
 &nbsp;</pre></td></tr></table></pre>
 
@@ -186,14 +186,14 @@ export const useGetDetail = (): {
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
                 at 2023-04-25T00:23:20.934Z
             </div>
-        <script src="../prettify.js"></script>
+        <script src="../../prettify.js"></script>
         <script>
             window.onload = function () {
                 prettyPrint();
             };
         </script>
-        <script src="../sorter.js"></script>
-        <script src="../block-navigation.js"></script>
+        <script src="../../sorter.js"></script>
+        <script src="../../block-navigation.js"></script>
     </body>
 </html>
     

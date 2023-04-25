@@ -36,3 +36,4 @@ export const ItemListPage = () => {
     </section>
   );
 };
+export default ItemListPage;

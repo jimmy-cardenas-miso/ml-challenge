@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1682453411576" clover="3.2.0">
-  <project timestamp="1682453411576" name="All files">
-    <metrics statements="90" coveredstatements="87" conditionals="15" coveredconditionals="12" methods="23" coveredmethods="20" elements="128" coveredelements="119" complexity="0" loc="90" ncloc="90" packages="8" files="10" classes="10"/>
+<coverage generated="1682453815078" clover="3.2.0">
+  <project timestamp="1682453815078" name="All files">
+    <metrics statements="92" coveredstatements="89" conditionals="15" coveredconditionals="12" methods="23" coveredmethods="20" elements="130" coveredelements="121" complexity="0" loc="92" ncloc="92" packages="8" files="10" classes="10"/>
     <package name="components.Breadcrumb">
       <metrics statements="5" coveredstatements="5" conditionals="1" coveredconditionals="1" methods="2" coveredmethods="2"/>
       <file name="Breadcrumb.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/frontend/src/components/Breadcrumb/Breadcrumb.tsx">
@@ -82,9 +82,9 @@
       </file>
     </package>
     <package name="pages.ItemDetail">
-      <metrics statements="12" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+      <metrics statements="13" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
       <file name="ItemDetail.page.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/frontend/src/pages/ItemDetail/ItemDetail.page.tsx">
-        <metrics statements="12" coveredstatements="10" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
+        <metrics statements="13" coveredstatements="11" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="1"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -97,12 +97,13 @@
         <line num="15" count="3" type="cond" truecount="1" falsecount="0"/>
         <line num="17" count="0" type="stmt"/>
         <line num="20" count="0" type="stmt"/>
+        <line num="63" count="1" type="stmt"/>
       </file>
     </package>
     <package name="pages.ItemList">
-      <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+      <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
       <file name="ItemList.page.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/frontend/src/pages/ItemList/ItemList.page.tsx">
-        <metrics statements="15" coveredstatements="15" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
+        <metrics statements="16" coveredstatements="16" conditionals="4" coveredconditionals="4" methods="3" coveredmethods="3"/>
         <line num="1" count="1" type="stmt"/>
         <line num="4" count="1" type="stmt"/>
         <line num="6" count="1" type="stmt"/>
@@ -118,6 +119,7 @@
         <line num="21" count="1" type="stmt"/>
         <line num="23" count="2" type="stmt"/>
         <line num="29" count="2" type="stmt"/>
+        <line num="39" count="1" type="stmt"/>
       </file>
     </package>
     <package name="services">

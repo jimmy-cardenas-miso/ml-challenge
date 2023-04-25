@@ -59,3 +59,5 @@ export const ItemDetailPage = () => {
     </article>
   );
 };
+
+export default ItemDetailPage;

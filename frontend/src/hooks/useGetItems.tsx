@@ -17,7 +17,7 @@ export const useGetItems = (): {
   useEffect(() => {
     const query: string = searchParams.get('search') ?? '';
     dispatch(searchItems(query));
-  }, []);
+  }, [searchParams]);
 
   return { loading, items, categories };
 };

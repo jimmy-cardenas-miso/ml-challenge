@@ -16,7 +16,7 @@ export const useGetDetail = (): {
 
   useEffect(() => {
     dispatch(searchItemDetail(id ?? ''));
-  }, []);
+  }, [id]);
 
   return { loading, detail, categories };
 };

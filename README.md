@@ -82,8 +82,7 @@ Link of <a href="https://ml-challenge-c9f9c.firebaseapp.com/" target="_blank"><b
 Another solution is implemented for the frontend project using multi-package monorepo with React, Lerna and Single-SPA. This solution is located in the root folder and the micro-frontends in the `/packages` folder 
 
 ### Structure
-<img width="1329" alt="Captura de pantalla 2023-04-28 a la(s) 1 00 11 p m" src="https://user-images.githubusercontent.com/78035057/235220380-771b8553-6092-418b-9f18-6c5b2f9c4f23.png">
-
+<img width="1344" alt="Captura de pantalla 2023-04-28 a la(s) 1 02 51 p m" src="https://user-images.githubusercontent.com/78035057/235220934-a4bfaf1b-c666-48bc-9c69-1b6ab3ddc352.png">
 ### List MFs
 
 - 🔥 Header

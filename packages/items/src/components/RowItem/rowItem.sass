@@ -1,0 +1,75 @@
+@import '../../sass/base-styles'
+
+.row-item
+  @extend .p-3
+  background: var(--white)
+  display: flex
+  position: relative
+  flex-direction: column
+  align-items: center
+
+  &__image
+    @extend .mr-3
+    @extend .border
+    height: 180px
+    width: 180px
+    object-fit: contain
+
+  &__info
+    position: relative
+    width: 100%
+
+  &__panel
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    padding-right: 40px
+    flex-direction: column
+
+  &__head
+    display: flex
+    align-items: flex-start
+
+    img
+      object-fit: contain
+      width: 20px
+      @extend .mt-1
+
+  &__location
+    color: var(--gray)
+
+  &__price
+    margin: 0
+    font-size: 1.5rem
+
+  &__title
+    font-size: 1.125rem
+    text-align: left
+
+  &:after
+    content: ''
+    width: calc(100% - 40px)
+    height: 2px
+    background-color: var(--light-gray)
+    position: absolute
+    left: 20px
+    bottom: 0
+
+  &:last-child:after
+    display: none
+
+  &:hover
+    cursor: pointer
+    color: var(--blue)
+
+  @include media-width-min(md)
+    flex-direction: row
+
+    &__panel
+      flex-direction: row
+
+    &__price
+      margin: 0 16px 32px 0
+
+
+

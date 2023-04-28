@@ -1,0 +1,92 @@
+@import '../../sass/base-styles'
+
+.detail
+  @extend .py-3
+  @extend .pl-0
+
+  &__container
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    background-color: var(--white)
+    border-radius: 4px
+    @extend .mt-3
+    padding: 16px
+
+  &__nav
+    display: flex
+    align-items: center
+    justify-content: flex-start
+
+    button
+      & + ul:before
+        padding: 8px
+        color: var(--gray)
+        content: "|"
+
+      p
+        @extend .m-0
+        @extend .p-0
+        color: var(--gray)
+        font-size: 0.875rem
+
+        &:hover
+          cursor: pointer
+          color: var(--blue)
+
+  &__image-container
+    height: 100%
+
+  &__image
+    object-fit: contain
+    width: 680px
+    max-width: 100%
+    height: 100%
+
+  &__specs-title
+    @extend .mb-5
+    font-size: 1.75rem
+    color: var(--dark)
+
+  &__specs-description
+    font-size: 1rem
+    color: var(--gray)
+
+  &__info
+    @extend .ml-0
+    flex: 1
+    max-width: 340px
+
+  &__title
+    @extend .mb-5
+    font-size: 1.5rem
+
+  &__condition
+    @extend .mb-5
+    font-size: 0.875rem
+
+  &__price
+    font-size: 2.125rem
+    @extend .mb-5
+
+  &__button
+    @extend .mr-0
+
+
+  @include media-width-min(md)
+    &__container
+      padding: 32px
+      flex-direction: row
+
+    &__image-container
+      height: 680px
+
+    &__info
+      margin-left: 32px
+
+    &__price
+      font-size: 2.875rem
+
+    &__button
+      margin-right: 32px

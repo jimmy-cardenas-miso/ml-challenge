@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<coverage generated="1682703763651" clover="3.2.0">
+  <project timestamp="1682703763651" name="All files">
+    <metrics statements="31" coveredstatements="31" conditionals="14" coveredconditionals="13" methods="12" coveredmethods="12" elements="57" coveredelements="56" complexity="0" loc="31" ncloc="31" packages="6" files="7" classes="7"/>
+    <package name="components.Breadcrumb">
+      <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="Breadcrumb.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/components/Breadcrumb/Breadcrumb.tsx">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="9" count="2" type="stmt"/>
+        <line num="10" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="12" count="3" type="stmt"/>
+        <line num="15" count="7" type="stmt"/>
+      </file>
+    </package>
+    <package name="components.RowItem">
+      <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+      <file name="RowItem.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/components/RowItem/RowItem.tsx">
+        <metrics statements="3" coveredstatements="3" conditionals="2" coveredconditionals="2" methods="2" coveredmethods="2"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="4" type="stmt"/>
+        <line num="18" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="hooks">
+      <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+      <file name="useGetItems.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/hooks/useGetItems.tsx">
+        <metrics statements="8" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2"/>
+        <line num="8" count="2" type="stmt"/>
+        <line num="13" count="2" type="stmt"/>
+        <line num="14" count="2" type="stmt"/>
+        <line num="15" count="2" type="stmt"/>
+        <line num="17" count="2" type="stmt"/>
+        <line num="18" count="2" type="cond" truecount="1" falsecount="1"/>
+        <line num="19" count="2" type="stmt"/>
+        <line num="22" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="pages.ItemList">
+      <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+      <file name="ItemList.page.tsx" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/pages/ItemList/ItemList.page.tsx">
+        <metrics statements="10" coveredstatements="10" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
+        <line num="11" count="1" type="stmt"/>
+        <line num="12" count="4" type="stmt"/>
+        <line num="13" count="4" type="stmt"/>
+        <line num="15" count="4" type="stmt"/>
+        <line num="16" count="1" type="stmt"/>
+        <line num="19" count="4" type="cond" truecount="2" falsecount="0"/>
+        <line num="20" count="3" type="cond" truecount="2" falsecount="0"/>
+        <line num="21" count="1" type="stmt"/>
+        <line num="23" count="2" type="stmt"/>
+        <line num="29" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="services">
+      <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+      <file name="items.service.ts" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/services/items.service.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
+        <line num="5" count="2" type="stmt"/>
+      </file>
+    </package>
+    <package name="utilities">
+      <metrics statements="5" coveredstatements="5" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+      <file name="axiosApi.ts" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/utilities/axiosApi.ts">
+        <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
+        <line num="3" count="1" type="stmt"/>
+      </file>
+      <file name="currencyFormatter.ts" path="/Users/jimmy/Documents/GitHub/ml-challenge/packages/items/src/utilities/currencyFormatter.ts">
+        <metrics statements="4" coveredstatements="4" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
+        <line num="1" count="3" type="stmt"/>
+        <line num="6" count="3" type="stmt"/>
+        <line num="11" count="6" type="stmt"/>
+        <line num="16" count="6" type="stmt"/>
+      </file>
+    </package>
+  </project>
+</coverage>

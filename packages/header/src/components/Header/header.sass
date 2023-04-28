@@ -1,0 +1,54 @@
+.header
+  background-color: var(--yellow)
+  height: 50px
+
+  .nav
+    display: flex
+    flex-wrap: inherit
+    align-items: center
+    max-width: 1280px
+    padding: 8px 32px
+    margin: 0 auto
+    text-align: center
+    height: 100%
+
+    &__brand
+      height: 100%
+      margin-right: 32px
+
+      img
+        height: 100%
+
+    &__search
+      display: flex
+      width: 100%
+      height: 100%
+      box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2)
+      border-radius: 2px
+      overflow: hidden
+
+      form
+        display: flex
+        box-shadow: 0 1px 2px 0 rgba(0, 0, 0, .2)
+
+    &__input
+      width: 100%
+      margin: 0
+      background-color: var(--white)
+      color: var(--dark)
+      padding: 15px
+      border: none
+
+    &__search-btn
+      background-color: var(--light-gray)
+      height: 100%
+      padding: 8px
+      cursor: pointer
+      border: none
+      font-size: 1.375rem
+      color: var(--dark-gray)
+      line-height: 1rem
+
+      > img
+        height: 100%
+

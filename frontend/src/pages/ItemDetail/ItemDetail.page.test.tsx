@@ -30,7 +30,7 @@ describe('ItemDetailPage', () => {
     jest.resetAllMocks();
   });
 
-  test('renders loader when loading', async () => {
+  it('renders loader when loading', async () => {
     getDetailMock.mockReturnValue({
       loading: true,
       detail: undefined,
@@ -44,7 +44,7 @@ describe('ItemDetailPage', () => {
     );
   });
 
-  test('renders not found message when detail is not present', async () => {
+  it('renders not found message when detail is not present', async () => {
     getDetailMock.mockReturnValue({
       loading: false,
       detail: undefined,
@@ -56,7 +56,7 @@ describe('ItemDetailPage', () => {
     await waitFor(() => expect(getByText('Item no encontrado')).toBeDefined());
   });
 
-  test('renders item detail when detail is present', async () => {
+  it('renders item detail when detail is present', async () => {
     getDetailMock.mockReturnValue({
       loading: false,
       detail: {

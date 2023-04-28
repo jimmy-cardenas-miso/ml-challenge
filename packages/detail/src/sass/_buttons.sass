@@ -1,0 +1,17 @@
+.btn
+  padding: 0 24px
+  border-radius: 6px
+  color: var(--white)
+  height: 48px
+  width: 100%
+  border-color: transparent
+  transition: .2s
+
+  &-primary
+    @extend .btn
+    background-color: var(--blue)
+
+    &:not(:disabled):not(.disabled)
+      &:hover
+        cursor: pointer
+        background-color: var(--dark-blue)

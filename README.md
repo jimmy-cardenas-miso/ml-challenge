@@ -83,6 +83,7 @@ Another solution is implemented for the frontend project using multi-package mon
 
 ### Structure
 <img width="1344" alt="Captura de pantalla 2023-04-28 a la(s) 1 02 51 p m" src="https://user-images.githubusercontent.com/78035057/235220934-a4bfaf1b-c666-48bc-9c69-1b6ab3ddc352.png">
+
 ### List MFs
 
 - 🔥 Header
